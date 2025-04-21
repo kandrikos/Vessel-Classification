@@ -1,0 +1,6 @@
+/datasets/
+.github
+.pytest_cache
+.vscode
+qa_pipeline_README.md
+tests

@@ -1,0 +1,45 @@
+# Data settings
+data:
+  root_path: "datasets/VTUAD/inclusion_2000_exclusion_4000"  # Root path to the dataset
+  batch_size: 32  # Batch size for training/validation/testing
+  preprocess_methods: ["tfmel", "stft", "logscale"]  # List of preprocessing methods to use
+  shuffle_train: true  # Whether to shuffle training data
+
+# Model parameters
+model:
+  name: "resnet18"  # Model architecture to use
+  input_shape: [95, 126, 3]  # Input shape [height, width, channels]
+  num_classes: 5  # Number of classes to predict
+  params:
+    initial_filters: 64  # Number of filters in initial convolution
+    initial_kernel_size: 7  # Kernel size in initial convolution
+    initial_stride: 2  # Stride in initial convolution
+    block_filters: [64, 128, 256, 512]  # Filters in each ResNet block
+    block_kernel_size: 3  # Kernel size in ResNet blocks
+    dropout_rate: 0.3  # Dropout rate for regularization
+    l2_reg: 0.01  # L2 regularization strength
+    use_augmentation: true  # Whether to use spectrogram augmentation
+    freq_mask_param: 10  # Frequency mask width parameter
+    time_mask_param: 10  # Time mask width parameter
+
+# Optimizer settings
+optimizer:
+  type: "sgd"  # Optimizer type (sgd, adam)
+  learning_rate: 0.001  # Initial learning rate
+  momentum: 0.9  # Momentum (for SGD)
+  nesterov: true  # Whether to use Nesterov momentum
+  clipnorm: 1.0  # Gradient clipping norm
+
+# Training settings
+training:
+  epochs: 200  # Maximum number of epochs
+  early_stopping_patience: 30  # Patience for early stopping
+  reduce_lr_patience: 20  # Patience for learning rate reduction
+  reduce_lr_factor: 0.5  # Factor to reduce learning rate by
+  monitor_metric: "val_accuracy"  # Metric to monitor
+  monitor_mode: "max"  # Mode for the monitored metric (max or min)
+
+# Output settings
+output:
+  save_dir: "results/vessel_classification_results"  # Directory to save model and weights
+  eval_dir: "results/evaluation_results"  # Directory to save evaluation results
