@@ -56,7 +56,7 @@ Before training the model, you need to preprocess the raw audio files to generat
 
 ```bash
 # Generate spectrograms from raw audio files
-python -m src.data.preprocessing_generator
+python src/data/preprocessing_generator.py
 ```
 
 This script will:

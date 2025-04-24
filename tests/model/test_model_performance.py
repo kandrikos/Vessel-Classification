@@ -5,8 +5,7 @@ import numpy as np
 import pytest
 import tensorflow as tf
 from src.models.classifier import VesselClassifier
-from sklearn.metrics import (accuracy_score, f1_score, precision_score,
-                             recall_score)
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 
 class TestModelPerformance:
