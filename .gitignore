@@ -1,6 +1,5 @@
 /datasets/
-.github
 .pytest_cache
 .vscode
-qa_pipeline_README.md
-tests
+**/__pycache__/
+/results/vessel_classification_results/best_model.keras
