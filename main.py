@@ -48,10 +48,7 @@ def main():
     else:
         # Default configuration if no config file is provided
         data_root = (
-            Path(__file__).resolve().parents[0]
-            / "datasets"
-            / "VTUAD"
-            / "inclusion_2000_exclusion_4000"
+            Path(__file__).resolve().parents[0] / "datasets" / "VTUAD" / "inclusion_2000_exclusion_4000"
         )
         results_dir = Path("results") / Path("vessel_classification_results")
         eval_dir = Path("results") / Path("evaluation_results")
